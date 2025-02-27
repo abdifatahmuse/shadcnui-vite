@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // important for shadcn/ui
+      "@/*": ["./src/*", "./src"],
+      "@public/*": ["./public/*", "./public"],
+      "@shared/*": ["src/app/shared/*", "src/app/shared*"],
+      "@App/*": ["src/app/*", "./src/app"],
+      "@Hooks/*": ["./src/hooks/*", "./src/hooks"],
+      "@Components/*": ["./src/components/*", "./src/components"]
+      //   "@Utils/*": ["./src/utils/*", "./src/utils"],
+      //   "@Cores/*": ["./src/Core/*", "./src/Core"],
+      //   "@Interfaces/*": ["./src/Core/Interfaces/*", "./src/Core/Interfaces"],
+      //   "@Dtos/*": ["./src/Dtos/*", "./src/Dtos"],
+      //   "@Enums/*": ["./src/Core/Enum/*", "./src/Core/Enum"],
+      //   "@Stores/*": ["./src/store/*", "./src/store"],
+      //   "@Types/*": ["./src/Core/Types/*", "./src/Core/Types"],
+      //   "@Client/*": ["./src/Core/Client/*", "./src/Core/Client"],
+      //   "@api": ["./src/Core/Client/index.ts"]
+    }
+  }
+}
