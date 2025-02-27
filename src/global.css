@@ -236,6 +236,7 @@
     scrollbar-color: hsl(var(--border)) transparent;
   }
 
+  /* scrollbar Bug Theme solved */
   /* Sidebar specific scrollbar styling */
   .sidebar-scroll::-webkit-scrollbar {
     width: 2px;
