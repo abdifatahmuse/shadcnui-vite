@@ -3,12 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-// import authImg from "public/assets/meeting-bro.png";
+import authImg from "@public/assets/meeting-bro.png";
 
 export default function LoginPage() {
-  return (
-    <AuthWrapper children={<LoginForm />} image={"authImg"} title="Test" />
-  );
+  return <AuthWrapper children={<LoginForm />} image={authImg} title="Test" />;
 }
 
 export function LoginForm({
