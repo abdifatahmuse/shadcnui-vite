@@ -1,11 +1,15 @@
-import { ChevronsUpDown, Plus } from "lucide-react";
+import { ChevronsUpDown, Palette, Plus } from "lucide-react";
 import * as React from "react";
 
+import { Theme, useTheme } from "@/components/theme-provider";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
@@ -27,6 +31,7 @@ export function TeamSwitcher({
   }[];
 }) {
   const { isMobile } = useSidebar();
+  const { theme, setTheme } = useTheme();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
 
   return (
@@ -70,6 +75,25 @@ export function TeamSwitcher({
                 <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
               </DropdownMenuItem>
             ))}
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuLabel className="text-muted-foreground text-xs flex items-center gap-1">
+                <Palette className="size-3" /> Theme
+              </DropdownMenuLabel>
+              <DropdownMenuRadioGroup
+                value={theme}
+                onValueChange={(v) => setTheme(v as Theme)}
+              >
+                <DropdownMenuRadioItem value="blue">Blue</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="green">
+                  Green
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="red">Red</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="yellow">
+                  Yellow
+                </DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 p-2">
               <div className="bg-background flex size-6 items-center justify-center rounded-md border">

@@ -24,11 +24,11 @@ export default function ModeToggle({
   showLabel?: boolean;
   iconOnly?: boolean;
 }) {
-  const { setTheme, theme } = useTheme();
+  const { setMode, mode } = useTheme();
 
   const toggleTheme = React.useCallback(() => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }, [theme, setTheme]);
+    setMode(mode === "dark" ? "light" : "dark");
+  }, [mode, setMode]);
 
   return (
     <TooltipProvider>
@@ -46,7 +46,7 @@ export default function ModeToggle({
               <SunIcon className="hidden [html.dark_&]:block" />
               <MoonIcon className="hidden [html.light_&]:block" />
               <span className="sr-only">Toggle theme</span>
-              {showLabel && <label htmlFor="theme">{theme}</label>}
+              {showLabel && <label htmlFor="theme">{mode}</label>}
             </Button>
           ) : (
             <DropdownMenu>
@@ -58,13 +58,13 @@ export default function ModeToggle({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
+                <DropdownMenuItem onClick={() => setMode("light")}>
                   Light
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                <DropdownMenuItem onClick={() => setMode("dark")}>
                   Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
+                <DropdownMenuItem onClick={() => setMode("system")}>
                   System
                 </DropdownMenuItem>
               </DropdownMenuContent>
